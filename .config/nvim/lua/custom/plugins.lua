@@ -13,12 +13,18 @@ return function(use)
 --  use 'shaunsingh/nord.nvim',
 --  use 'arcticicestudio/nord-vim',
 --  use 'Roy-Orbison/nord-vim-256',
+  use "ggandor/leap.nvim",
+  use "windwp/nvim-spectre",
+  use { 'echasnovski/mini.cursorword', branch = 'stable',
+      config = function ()
+        require('mini.cursorword').setup()
+      end
+    },
   use{
    'windwp/nvim-autopairs',
      config =function ()
        require('nvim-autopairs').setup()
      end
-    },
-    use{'ThePrimeagen/vim-be-good'}
+    }
   )
 end

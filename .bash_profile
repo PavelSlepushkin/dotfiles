@@ -12,3 +12,7 @@ source <(kubectl completion bash)
 alias k=kubectl
 complete -F __start_kubectl k
 
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)
+alias vi="nvim"
+alias vim="nvim"
