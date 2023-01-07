@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 --[[
 --terraform format on save
-require'lspconfig'.terraformls.setup{}
+require 'lspconfig'.terraformls.setup{}
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = {"*.tf", "*.tfvars"},
   callback = function()
@@ -38,7 +38,11 @@ vim.opt.clipboard = "unnamedplus"
 local wk = require("which-key")
 wk.register({
   mode = { "n", "v" },
-  ["<leader>f"] = { name = "+[F]ind" }
+  ["<leader>f"] = { name = "+[F]ind via telescope" },
+  ["<leader>d"] = { name = "+LSP [D]ocument" },
+  ["<leader>c"] = { name = "+LSP [C]ode Action" },
+  ["<leader>r"] = { name = "+LSP [R]ename" },
+  ["<leader>w"] = { name = "+LSP [W]orkspace" }
 })
 -- terminal horizontal
 --Telescope default bindings
@@ -48,12 +52,14 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind with live 
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [B]uffers' })
 vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
+--my telescope
+vim.keymap.set('n', '<leader>fr', builtin.registers, { desc = '[F]ind [R]egisters' })
 
 -- visial search and replace
 vim.keymap.set('x', '<Leader>/', '<Esc>/\\%V', { desc = 'Search in visial block' })
 vim.keymap.set('x', '<Leader>r', [[:s/\%V]], { desc = '[R]eplace in visual block' })
 
---Primagen remaps
+--Primagen remaps - move Visual block with JK
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -67,11 +73,11 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 -- Additional plugins that I'm trying now - 2023-01-06
 -- leap.nwip (s and S search on screen)
-require("leap").add_default_mappings(true)
+--require("leap").add_default_mappings(true)
 -- nvim-spectre - Search and replace in multiple files
 local spectre = require('spectre')
 vim.keymap.set('n', '<leader>S', function() spectre.open() end, { desc = '[S]earch and replace -spectre' })
----[[
+---[[ open telescope find_files when vim started without paramters
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     if vim.fn.argc() == 0 then
@@ -80,3 +86,5 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 --]]
+vim.keymap.set('n', '<leader>n', function() vim.o.rnu = not vim.o.rnu end, { desc = 'Toggle relative line [N]umbers' })
+require("nvim-surround").setup()
