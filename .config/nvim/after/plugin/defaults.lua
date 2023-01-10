@@ -44,7 +44,6 @@ wk.register({
   ["<leader>r"] = { name = "+LSP [R]ename" },
   ["<leader>w"] = { name = "+LSP [W]orkspace" }
 })
--- terminal horizontal
 --Telescope default bindings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
@@ -77,7 +76,8 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 -- nvim-spectre - Search and replace in multiple files
 local spectre = require('spectre')
 vim.keymap.set('n', '<leader>S', function() spectre.open() end, { desc = '[S]earch and replace -spectre' })
----[[ open telescope find_files when vim started without paramters
+
+--[[ open telescope find_files when vim started without paramters
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     if vim.fn.argc() == 0 then
@@ -86,5 +86,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 --]]
+
 vim.keymap.set('n', '<leader>n', function() vim.o.rnu = not vim.o.rnu end, { desc = 'Toggle relative line [N]umbers' })
 require("nvim-surround").setup()
