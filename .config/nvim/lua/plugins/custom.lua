@@ -1,10 +1,4 @@
 return {
-	{
-		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({})
-		end
-	},
 	{ 'ray-x/go.nvim',
 		config = function()
 			require('go').setup()

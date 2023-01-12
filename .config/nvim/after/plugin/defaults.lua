@@ -5,9 +5,6 @@ vim.opt.wildmenu = true
 
 vim.opt.scrolloff = 8
 
---Lua: colorscheme
---vim.cmd[[colorscheme habamax]]
-
 --ray-x.go plugin format
 local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -34,16 +31,6 @@ vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 --vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- system clipboard
 vim.opt.clipboard = "unnamedplus"
--- which-key prefix register
-local wk = require("which-key")
-wk.register({
-  mode = { "n", "v" },
-  ["<leader>f"] = { name = "+[F]ind via telescope" },
-  ["<leader>d"] = { name = "+LSP [D]ocument" },
-  ["<leader>c"] = { name = "+LSP [C]ode Action" },
-  ["<leader>r"] = { name = "+LSP [R]ename" },
-  ["<leader>w"] = { name = "+LSP [W]orkspace" }
-})
 --Telescope default bindings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
@@ -71,8 +58,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", "\"_dP")
 -- Additional plugins that I'm trying now - 2023-01-06
--- leap.nwip (s and S search on screen)
---require("leap").add_default_mappings(true)
 -- nvim-spectre - Search and replace in multiple files
 local spectre = require('spectre')
 vim.keymap.set('n', '<leader>S', function() spectre.open() end, { desc = '[S]earch and replace -spectre' })
@@ -88,4 +73,3 @@ vim.api.nvim_create_autocmd('VimEnter', {
 --]]
 
 vim.keymap.set('n', '<leader>n', function() vim.o.rnu = not vim.o.rnu end, { desc = 'Toggle relative line [N]umbers' })
-require("nvim-surround").setup()
