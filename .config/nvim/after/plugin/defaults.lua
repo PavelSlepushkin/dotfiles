@@ -57,10 +57,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", "\"_dP")
--- Additional plugins that I'm trying now - 2023-01-06
--- nvim-spectre - Search and replace in multiple files
-local spectre = require('spectre')
-vim.keymap.set('n', '<leader>S', function() spectre.open() end, { desc = '[S]earch and replace -spectre' })
 
 --[[ open telescope find_files when vim started without paramters
 vim.api.nvim_create_autocmd('VimEnter', {

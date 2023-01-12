@@ -4,7 +4,6 @@ return {
 			require('go').setup()
 		end
 	},
-	"windwp/nvim-spectre",
 	{ 'echasnovski/mini.cursorword', branch = 'stable',
 		config = function()
 			require('mini.cursorword').setup()
