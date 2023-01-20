@@ -1,9 +1,4 @@
 return {
-  { 'ray-x/go.nvim',
-    config = function()
-      require('go').setup()
-    end
-  },
   { 'echasnovski/mini.cursorword', branch = 'stable',
     config = function()
       require('mini.cursorword').setup()

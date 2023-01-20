@@ -3,4 +3,6 @@ return {
   'Mofiqul/dracula.nvim', --Dracula in lua
   'sainnhe/gruvbox-material', --gruvbox
   "EdenEast/nightfox.nvim",
+  'sainnhe/everforest',
+  "catppuccin/nvim",
 }

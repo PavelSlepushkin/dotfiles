@@ -7,7 +7,7 @@ return {
         options = {
           icons_enabled = false,
           --theme = 'gruvbox-material',
-          theme = 'onedark',
+          -- theme = 'onedark',
           component_separators = '|',
           section_separators = '',
         },
