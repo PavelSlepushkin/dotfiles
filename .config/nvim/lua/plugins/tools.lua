@@ -5,6 +5,7 @@ return {
       require('mini.cursorword').setup()
     end
   },
+
   {
     "kylechui/nvim-surround", --surround -add keymaps like 'ys(' - you surround, 'cs]' - change surround to ]
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -14,6 +15,7 @@ return {
       })
     end
   },
+
   {
     'windwp/nvim-autopairs', --autopairs (used to them in VS code)
     config = function()
@@ -21,7 +23,22 @@ return {
     end
   },
 
-  'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
-  'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+  { 'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
+    config = function()
+      -- Enable `lukas-reineke/indent-blankline.nvim`
+      -- See `:help indent_blankline.txt`
+      require('indent_blankline').setup {
+        char = '┊',
+        show_trailing_blankline_indent = false,
+      }
+    end
+  },
+
+  { 'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
+    config = function()
+      require('Comment').setup()
+    end
+  },
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 }
