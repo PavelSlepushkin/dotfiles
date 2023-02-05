@@ -20,6 +20,9 @@ vim.keymap.set('x', '<Leader>r', [[:s/\%V]], { desc = '[R]eplace in visual block
 --Primagen remaps - move Visual block with JK
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- same but for cursor keys
+vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -39,5 +42,13 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 --]]
+--autocommand for save on focust lost and BufLeave
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
+  callback = function()
+    if vim.bo.modified and not vim.bo.readonly and vim.fn.expand("%") ~= "" and vim.bo.buftype == "" then
+      vim.api.nvim_command('silent update')
+    end
+  end,
+})
 
 vim.keymap.set('n', '<leader>n', function() vim.o.rnu = not vim.o.rnu end, { desc = 'Toggle relative line [N]umbers' })
