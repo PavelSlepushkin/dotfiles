@@ -1,10 +1,11 @@
-export PS1='\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
-umask 0022
-alias ps1="echo \"export PS1='\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '\""
+source /usr/share/bash-completion/completions/git
+export PS1='\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]$(__git_ps1 " (%s)")\n\$ '
+# umask 0022
+alias ps1="echo \"export PS1='\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]$(__git_ps1 " (%s)")\n\$ '\""
 alias dt="date +%Y%m%d_%H%M%S"
 alias grep='grep --color'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
-export EDITOR=vim
+export EDITOR=nvim
 
 set +o emacs
 set -o vi

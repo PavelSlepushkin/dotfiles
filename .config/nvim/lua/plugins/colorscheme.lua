@@ -4,5 +4,5 @@ return {
   'sainnhe/gruvbox-material', --gruvbox
   "EdenEast/nightfox.nvim",
   'sainnhe/everforest',
-  "catppuccin/nvim",
+  { 'catppuccin/nvim', name = 'catppuccin' },
 }
