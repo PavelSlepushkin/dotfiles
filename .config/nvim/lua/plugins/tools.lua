@@ -41,6 +41,14 @@ return {
   },
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-unimpaired', -- handy mappins for [ and ]
+  { 'tummetott/unimpaired.nvim', --same but in lua with which-key support
+    config = function()
+      require('unimpaired').setup {
+        -- add any options here or leave empty
+      }
+    end
+  },
   { 'jinh0/eyeliner.nvim',
     config = function()
       require 'eyeliner'.setup {

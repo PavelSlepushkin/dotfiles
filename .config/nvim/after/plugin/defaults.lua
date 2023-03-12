@@ -23,6 +23,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- same but for cursor keys
 vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
+-- cursor case up/down - go into Normal mod
+vim.keymap.set("i", "<Down>", "<Esc><Down>")
+vim.keymap.set("i", "<Up>", "<Esc><Up>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
