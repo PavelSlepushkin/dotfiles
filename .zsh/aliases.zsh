@@ -1,0 +1,6 @@
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias dt='date +%Y%m%d_%H%M%S'
+alias grep='grep --color'
+alias k='kubectl'
+alias vi='nvim'
+alias vim='nvim'
