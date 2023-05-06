@@ -4,7 +4,7 @@ export PS1='\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]$(__git_ps1 " (%s)")\n\$ '
 alias ps1="echo \"export PS1='\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]$(__git_ps1 " (%s)")\n\$ '\""
 alias dt="date +%Y%m%d_%H%M%S"
 alias grep='grep --color'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 export EDITOR=nvim
 
 set +o emacs
