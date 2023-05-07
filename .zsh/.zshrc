@@ -43,6 +43,7 @@ zsh_add_plugin "romkatv/powerlevel10k"
 
 #fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /etc/zsh_command_not_found
 
 #Completions
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
