@@ -38,6 +38,9 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "romkatv/powerlevel10k"
 
+#fzf
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /etc/zsh_command_not_found
 #WSL
 PATH=~/.local/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #Completions

@@ -1,6 +1,7 @@
 -- See `:help nvim-treesitter`
 return {
-  { -- Highlight, edit, and navigate code
+  {
+    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
@@ -11,7 +12,7 @@ return {
     },
     opts = {
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = { 'go', 'lua', 'help', 'vim', 'bash', 'terraform', 'json', 'markdown', 'yaml' },
+      ensure_installed = { 'go', 'lua', 'vim', 'bash', 'terraform', 'json', 'markdown', 'yaml' },
 
       highlight = { enable = true },
       indent = { enable = true, disable = { 'python' } },
