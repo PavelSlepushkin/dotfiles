@@ -1,14 +1,14 @@
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dt='date +%Y%m%d_%H%M%S'
-alias grep='grep --color'
-alias gs='git status'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias h='history'
 alias k='kubectl'
 alias kubens='kubectl config set-context --current --namespace '
 alias vi='nvim'
-alias vim='nvim'
-# from https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-# alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; } ; f'
-# alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'
-alias gs='git status'
 alias grep='grep --color'
+alias gs='git status'
 alias cg='cd "$(git rev-parse --show-toplevel || echo .)"'
+alias gm='git switch $(git rev-parse --abbrev-ref origin/HEAD |cut -f2 -d\/)'
+## trying some modern replacements
+alias ls=exa
+alias ll='exa -all -snew'
+alias cat=batcat
+alias diff=delta
