@@ -30,6 +30,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 _comp_options+=(globdots)
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# PATH
+export PATH=$HOME/.local/bin:$PATH
 # chat GPT
 # source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/vim-mode.zsh
@@ -42,8 +46,9 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "romkatv/powerlevel10k"
 
 #fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /etc/zsh_command_not_found
+[ -f $ZDOTDIR/.fzf.zsh ] && source $ZDOTDIR/.fzf.zsh
+#source /usr/share/doc/fzf/examples/key-bindings.zsh
+#source /etc/zsh_command_not_found
 
 #Completions
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)

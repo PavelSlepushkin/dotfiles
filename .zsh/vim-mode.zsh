@@ -3,10 +3,10 @@ bindkey -v
 export KEYTIMEOUT=1
 # binds 'like-bash'
 bindkey '^R' history-incremental-search-backward
-bindkey -M viins '\e.' insert-last-word
+bindkey -M viins '≥' insert-last-word
 # binds for autocomplete
-bindkey -M viins "^[[1;5C" forward-word
-bindkey -M viins "^[[1;5D" backward-word
+bindkey -M viins "^[^[[C" forward-word
+bindkey -M viins "^[^[[D" backward-word
 # ChatGPT implementation of show mode 
 
 # function zle-line-init zle-keymap-select {
