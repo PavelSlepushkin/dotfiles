@@ -7,6 +7,9 @@ bindkey -M viins '≥' insert-last-word
 # binds for autocomplete
 bindkey -M viins "^[^[[C" forward-word
 bindkey -M viins "^[^[[D" backward-word
+# home/end for macOs
+bindkey -M viins "^[[1~" beginning-of-line
+bindkey -M viins "^[[4~" end-of-line
 # ChatGPT implementation of show mode 
 
 # function zle-line-init zle-keymap-select {
