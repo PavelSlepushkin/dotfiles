@@ -2,7 +2,7 @@
 return {
   {
     'echasnovski/mini.cursorword',
-    branch = 'stable',                                --underline word under cursor
+    branch = 'stable', --underline word under cursor
     config = function()
       require('mini.cursorword').setup()
     end
@@ -43,7 +43,7 @@ return {
     end
   },
 
-  'tpope/vim-sleuth',            -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- 'tpope/vim-unimpaired', -- handy mappins for [ and ]
   {
     'tummetott/unimpaired.nvim', --same but in lua with which-key support
@@ -62,4 +62,5 @@ return {
       }
     end
   },
+  'towolf/vim-helm',
 }
