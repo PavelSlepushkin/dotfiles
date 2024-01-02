@@ -32,15 +32,24 @@ function zsh_add_completion() {
 }
 # copying path functions from bash
 # but probably they are not needed
-pathadd() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="$1${PATH:+":$PATH"}"
-  fi
+# pathadd() {
+#   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+#     PATH="$1${PATH:+":$PATH"}"
+#   fi
+# }
+# pathrm() {
+#   # Delete path by parts so we can never accidentally remove sub paths
+#   if [ "$PATH" == "$1" ] ; then PATH="" ; fi
+#   PATH=${PATH//":$1:"/":"} # delete any instances in the middle
+#   PATH=${PATH/#"$1:"/} # delete any instance at the beginning
+#   PATH=${PATH/%":$1"/} # delete any instance in the at the end
+# }
+
+#
+#
+function set_tmux_pane_name_k8sconfig() {
+    [[ -v KUBECONFIG ]] && tmux rename-window $(basename $KUBECONFIG .yaml)
 }
-pathrm() {
-  # Delete path by parts so we can never accidentally remove sub paths
-  if [ "$PATH" == "$1" ] ; then PATH="" ; fi
-  PATH=${PATH//":$1:"/":"} # delete any instances in the middle
-  PATH=${PATH/#"$1:"/} # delete any instance at the beginning
-  PATH=${PATH/%":$1"/} # delete any instance in the at the end
-}
+typeset -a precmd_functions
+# append the function to our array of precmd functions
+precmd_functions+=(set_tmux_pane_name_k8sconfig)

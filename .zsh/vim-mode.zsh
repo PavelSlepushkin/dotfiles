@@ -10,6 +10,12 @@ bindkey -M viins "^[^[[D" backward-word
 # home/end for macOs
 bindkey -M viins "^[[1~" beginning-of-line
 bindkey -M viins "^[[4~" end-of-line
+bindkey -M vicmd "^[[1~" beginning-of-line
+bindkey -M vicmd "^[[4~" end-of-line
+# v for edit-coomand-line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 # ChatGPT implementation of show mode 
 
 # function zle-line-init zle-keymap-select {

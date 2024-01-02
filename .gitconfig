@@ -1,3 +1,5 @@
 [user]
 	name = Pavel Slepushkin
 	email = pavel.slepushkin@kyriba.com
+[push]
+	autoSetupRemote = yes
