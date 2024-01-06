@@ -3,16 +3,16 @@ windows:
 - layout: b73d,138x61,0,0,0
   options:
     automatic-rename: 'off'
-  start_directory: /home/slepushp/notes
+  start_directory: /home/pavel/notes
   window_name: notes
 - layout: b73e,138x61,0,0,1
   options:
     automatic-rename: 'off'
-  start_directory: /home/slepushp/git
+  start_directory: /home/pavel/git
   window_name: git
 - focus: 'true'
   layout: b73f,138x61,0,0,2
   options:
     automatic-rename: 'off'
-  start_directory: /home/slepushp
+  start_directory: /home/pavel
   window_name: cmds

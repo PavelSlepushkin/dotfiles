@@ -9,7 +9,7 @@
 HISTFILE=$ZDOTDIR/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
-
+setopt sharehistory
 # some useful options (man zshoptions)
 # setopt autocd extendedglob nomatch menucomplete
 # setopt interactive_comments
@@ -30,7 +30,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 _comp_options+=(globdots)
-# chat GPT
 # source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/vim-mode.zsh
 source $ZDOTDIR/aliases.zsh
