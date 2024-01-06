@@ -53,3 +53,7 @@ function set_tmux_pane_name_k8sconfig() {
 typeset -a precmd_functions
 # append the function to our array of precmd functions
 precmd_functions+=(set_tmux_pane_name_k8sconfig)
+# grep1
+function grep1() {
+    awk -v pattern="${1:?pattern is empty}" 'NR==1 || $0~pattern' "${2:-/dev/stdin}";
+}

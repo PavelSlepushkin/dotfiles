@@ -1,36 +1,42 @@
-# Colors (Everforest Dark)
-
-# Default colors
-[colors.primary]
-background = '#2d353b'
-foreground = '#d3c6aa'
-
-# Normal colors
-[colors.normal]
-black   = '#475258'
-red     = '#e67e80'
-green   = '#a7c080'
-yellow  = '#dbbc7f'
-blue    = '#7fbbb3'
-magenta = '#d699b6'
-cyan    = '#83c092'
-white   = '#d3c6aa'
-
-# Bright colors
-[colors.bright]
-black   = '#475258'
-red     = '#e67e80'
-green   = '#a7c080'
-yellow  = '#dbbc7f'
-blue    = '#7fbbb3'
-magenta = '#d699b6'
-cyan    = '#83c092'
-white   = '#d3c6aa'
+# # Colors (Everforest Dark)
+#
+# # Default colors
+# [colors.primary]
+# background = '#2d353b'
+# foreground = '#d3c6aa'
+#
+# # Normal colors
+# [colors.normal]
+# black   = '#475258'
+# red     = '#e67e80'
+# green   = '#a7c080'
+# yellow  = '#dbbc7f'
+# blue    = '#7fbbb3'
+# magenta = '#d699b6'
+# cyan    = '#83c092'
+# white   = '#d3c6aa'
+#
+# # Bright colors
+# [colors.bright]
+# black   = '#475258'
+# red     = '#e67e80'
+# green   = '#a7c080'
+# yellow  = '#dbbc7f'
+# blue    = '#7fbbb3'
+# magenta = '#d699b6'
+# cyan    = '#83c092'
+# white   = '#d3c6aa'
+import = [
+    "~/.config/alacritty/themes/themes/everforest_dark.toml"
+]
 
 [font]
 size = 14
-normal = { family = "JetBrains Mono", style = "Light" }
-bold = { style = "Regular" }
+normal = { family = "JetBrains Mono", style = "ExtraLight" }
+bold = { style = "Light" }
 
 [window]
 option_as_alt = "Both"
+dimensions = { columns = 159, lines = 73 }
+padding = { x = 2 , y = 2 }
+position = { x = 1283, y = 0 }
