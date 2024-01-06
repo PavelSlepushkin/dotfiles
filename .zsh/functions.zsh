@@ -30,17 +30,3 @@ function zsh_add_completion() {
 	completion_file="$(basename "${completion_file_path}")"
 	if [ "$2" = true ] && compinit "${completion_file:1}"
 }
-# copying path functions from bash
-# but probably they are not needed
-pathadd() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="$1${PATH:+":$PATH"}"
-  fi
-}
-pathrm() {
-  # Delete path by parts so we can never accidentally remove sub paths
-  if [ "$PATH" == "$1" ] ; then PATH="" ; fi
-  PATH=${PATH//":$1:"/":"} # delete any instances in the middle
-  PATH=${PATH/#"$1:"/} # delete any instance at the beginning
-  PATH=${PATH/%":$1"/} # delete any instance in the at the end
-}

@@ -9,7 +9,6 @@
 HISTFILE=$ZDOTDIR/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
-setopt sharehistory
 # some useful options (man zshoptions)
 # setopt autocd extendedglob nomatch menucomplete
 # setopt interactive_comments
@@ -22,6 +21,11 @@ unsetopt BEEP
 setopt autocd
 # leading space - no add to history
 setopt histignorespace
+# remove duplicates from history
+setopt histignorealldups
+# share history between sessions - useful for tmux
+setopt sharehistory
+
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pavel/.zshrc'
