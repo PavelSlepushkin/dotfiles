@@ -3,6 +3,13 @@ return {
   -- 'Mofiqul/dracula.nvim', --Dracula in lua
   -- 'sainnhe/gruvbox-material', --gruvbox
   -- "EdenEast/nightfox.nvim",
-  'sainnhe/everforest',
+  {
+    'sainnhe/everforest',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[ colorscheme everforest]])
+    end
+  },
   -- { 'catppuccin/nvim', name = 'catppuccin' },
 }
