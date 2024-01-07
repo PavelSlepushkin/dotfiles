@@ -53,4 +53,5 @@ return {
       }
     end
   },
+  'towolf/vim-helm',
 }
