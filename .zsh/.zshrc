@@ -28,8 +28,6 @@ setopt histignorealldups
 setopt sharehistory
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/pavel/.zshrc'
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -38,7 +36,6 @@ _comp_options+=(globdots)
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # PATH
 export PATH=$HOME/.local/bin:$PATH
-# chat GPT
 # source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/vim-mode.zsh
 source $ZDOTDIR/aliases.zsh
