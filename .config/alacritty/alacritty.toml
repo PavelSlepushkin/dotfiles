@@ -5,10 +5,10 @@ import = [
 [font]
 normal = { family = "JetBrains Mono", style = "Light"}
 bold = { style = "Regular" }
-size = 11.25
+size = 11
 
 [window]
 # option_as_alt = "Both"
-dimensions = { columns = 140, lines = 65 }
+dimensions = { columns = 140, lines = 68 }
 padding = { x = 2 , y = 2 }
-position = { x = 1283, y = 0 }
+position = { x = 1286, y = 0 }
