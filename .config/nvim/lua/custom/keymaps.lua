@@ -10,8 +10,6 @@ vim.keymap.set("n", "<C-s>", ":w<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 -- leader-s for search and replace current word
 --vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
--- system clipboard
-vim.opt.clipboard = "unnamedplus"
 
 -- visial search and replace
 vim.keymap.set('x', '<Leader>/', '<Esc>/\\%V', { desc = 'Search in visial block' })
@@ -35,7 +33,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", "\"_dP")
-
+-- yank into system clipboard
+vim.keymap.set({ "n", "v" }, "y", "\"*y")
 --[[ open telescope find_files when vim started without paramters
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
