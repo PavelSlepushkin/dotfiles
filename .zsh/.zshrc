@@ -26,6 +26,8 @@ setopt histignorespace
 setopt histignorealldups
 # share history between sessions - useful for tmux
 setopt sharehistory
+# completion for aliases
+setopt completealiases
 
 # The following lines were added by compinstall
 autoload -Uz compinit
