@@ -1,0 +1,4 @@
+#compdef kn
+local -a subcmds
+subcmds=("${(@f)$(kubectl get ns  --no-headers -o custom-columns=":metadata.name")}")
+_describe 'command' subcmds

@@ -26,6 +26,8 @@ setopt histignorealldups
 # share history between sessions - useful for tmux
 setopt sharehistory
 
+# my completions
+fpath=(~/.zsh/completions $fpath)
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pavel/.zshrc'

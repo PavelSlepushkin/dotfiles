@@ -1,7 +1,16 @@
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias h='history'
 alias k='kubectl'
-alias kubens='kubectl config set-context --current --namespace '
+# alias kubens='kubectl config set-context --current --namespace '
+# https://kubernetes.io/docs/reference/kubectl/quick-reference/
+# short alias to set/show context/namespace (only works for bash and bash-compatible shells, current context to be set before using kn to set namespace)
+# alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; } ; f'
+# alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'
+function kn() {
+    [[ -v 1 ]] && kubectl config set-context --current --namespace "$1" || \
+        kubectl config view --minify | grep namespace | cut -d" " -f6 
+} 
+
 alias vi='nvim'
 alias grep='grep --color'
 alias gs='git status'
@@ -15,3 +24,4 @@ alias la="ls -la"
 alias cat=batcat
 alias catp=batcat --plain
 alias diff=delta
+compdef delta=diff
