@@ -25,7 +25,9 @@ vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("i", "<Down>", "<Esc><Down>")
 vim.keymap.set("i", "<Up>", "<Esc><Up>")
 
-vim.keymap.set("n", "J", "mzJ`z")
+-- Join lines with keep cursor place - commented out at the moment
+-- vim.keymap.set("n", "J", "mzJ`z")
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
