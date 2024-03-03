@@ -36,7 +36,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", "\"_dP")
 -- yank into system clipboard
-vim.keymap.set({ "n", "v" }, "y", "\"*y")
+--macOS, linux X11
+-- vim.keymap.set({ "n", "v" }, "y", "\"*y")
+-- linux Wayland
+vim.keymap.set({ "n", "v" }, "y", "\"+y")
 --[[ open telescope find_files when vim started without paramters
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()

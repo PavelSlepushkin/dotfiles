@@ -12,3 +12,9 @@ size = 11
 dimensions = { columns = 140, lines = 68 }
 padding = { x = 2 , y = 2 }
 position = { x = 1286, y = 0 }
+decorations = "None"
+
+[keyboard]
+bindings = [
+{ key = "V", mods = "Control", action = "Paste"},
+]
