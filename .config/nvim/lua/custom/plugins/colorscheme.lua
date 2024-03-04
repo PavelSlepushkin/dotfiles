@@ -8,8 +8,9 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[ colorscheme everforest]])
-    end
+      vim.opt.termguicolors = true
+      vim.cmd.colorscheme 'everforest'
+    end,
   },
   -- { 'catppuccin/nvim', name = 'catppuccin' },
 }
