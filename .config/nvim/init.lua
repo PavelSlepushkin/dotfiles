@@ -4,14 +4,14 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- [[ Setting options ]]
+require 'options'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
 
 -- [[ Configure plugins ]]
 require 'lazy-plugins'
-
--- [[ Setting options ]]
-require 'options'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
