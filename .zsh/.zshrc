@@ -51,7 +51,8 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "romkatv/powerlevel10k"
 
 #fzf
-[ -f $ZDOTDIR/.fzf.zsh ] && source $ZDOTDIR/.fzf.zsh
+eval "$(fzf --zsh)"
+# [ -f $ZDOTDIR/.fzf.zsh ] && source $ZDOTDIR/.fzf.zsh
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /etc/zsh_command_not_found
 

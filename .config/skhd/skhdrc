@@ -1,0 +1,74 @@
+:: default :
+# open terminal
+default <  cmd - return :  /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# toggle mic in google chrome - meet
+default < cmd - m : osascript ~/applescripts/chrome_meet_mic_toggle.script  
+default < cmd + shift - m : osascript ~/applescripts/chrome_meet_bring_to_front.script  
+default < f5 : osascript ~/applescripts/chrome_meet_bring_to_front.script  
+# copy to clipboard
+default < cmd - p : zsh -c "cat /Users/pavel.slepushkin/notes/one-timepwd|pbcopy ; sleep 30 ; echo ''|pbcopy"
+# default < cmd + ctrl - p : zsh -c "cat /Users/pavel.slepushkin/notes/one-timepwd|pbcopy"
+# default < ctrl + shift - p : zsh -c "cat /Users/pavel.slepushkin/notes/one-timepwd|pbcopy"
+
+# shortcuts for yabai
+# DO NOT USE CMD/Super key for yabai shortcuts
+# change window focus within space
+lalt - j : yabai -m window --focus south
+lalt - k : yabai -m window --focus north
+lalt - h : yabai -m window --focus west
+lalt - l : yabai -m window --focus east
+# focus window that was previously focused - [B]ack
+# lalt - b : yabai -m window --focus recent
+# move window
+shift + lalt - j : yabai -m window --swap south
+shift + lalt - k : yabai -m window --swap north
+shift + lalt - h : yabai -m window --swap west
+shift + lalt - l : yabai -m window --swap east
+# move and split window
+ctrl + lalt - j : yabai -m window --warp south
+ctrl + lalt - k : yabai -m window --warp north
+ctrl + lalt - h : yabai -m window --warp west
+ctrl + lalt - l : yabai -m window --warp east
+## move window to space #
+shift + alt - 1 : yabai -m window --space 1;
+shift + alt - 2 : yabai -m window --space 2;
+shift + alt - 3 : yabai -m window --space 3;
+shift + alt - 4 : yabai -m window --space 4;
+shift + alt - 5 : yabai -m window --space 5;
+shift + alt - 6 : yabai -m window --space 6;
+shift + alt - 7 : yabai -m window --space 7;
+
+#change focus between external displays (left and right)
+# alt - q : yabai -m display --focus west
+# alt - w : yabai -m display --focus east
+# focus space+display - change display and passthrough to macOS
+cmd - 1 -> : yabai -m display --focus west
+cmd - 2 -> : yabai -m display --focus west
+cmd - 3 -> : yabai -m display --focus west
+cmd - 4 -> : yabai -m display --focus west
+cmd - 5 -> : yabai -m display --focus west
+cmd - 6 -> : yabai -m display --focus east
+cmd - 7 -> : yabai -m display --focus east
+
+# Rotate layout clockwise
+shift + alt - r : yabai -m space --rotate 270
+# flip along y-axis
+shift + alt - y : yabai -m space --mirror y-axis
+# flip along x-axis
+shift + alt - x : yabai -m space --mirror x-axis
+# toggle window float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# maximize a window
+# shift + alt - m : yabai -m window --toggle native-fullscreen
+# lalt - m : yabai -m window --toggle zoom-fullscreen ; ~/.config/borders/diffborders
+lalt - m : yabai -m window --toggle zoom-fullscreen ; sleep 0.1; ~/.config/borders/toggleborders.sh
+# lalt - m : yabai -m window --toggle zoom-fullscreen
+
+# balance out tree of windows (resize to occupy same area)
+shift + alt - e : yabai -m space --balance
+
+# stop/start/restart yabai
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - r : yabai --restart-service

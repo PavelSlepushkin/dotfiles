@@ -1,0 +1,61 @@
+#! /usr/bin/env zsh
+#
+## default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# padding set to 12px
+yabai -m config top_padding 12
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+yabai -m config mouse_follows_focus off
+# focus follows mouse - hypr default
+# yabai -m config focus_follows_mouse on
+
+# modifier for clicking and dragging with mouse
+# yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+
+# yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+# focus -change borders
+# yabai -m signal --add event=window_focused \
+#      action=~/.config/borders/diffborders
+
+# function change_border_color {
+#   windowId=$(yabai -m query --windows --window |jq '.id')
+#   # echo "$(date) - ${YABAI_WINDOW_ID}" >> ~/tmp/yabai_fcalls.log
+#   sleep 1 # sleep as yabai does not update state fast enough
+#   if $(yabai -m query --windows --window | jq '."has-fullscreen-zoom"'); then
+#     borders active_color=0xffff0000 apply-to=${windowId}
+#   else
+#     borders active_color=0xffff7600 apply-to=${windowId}
+#   fi
+# }
+#
+# yabai -m signal --add event=window_resized \
+#   action=change_border_color
+
+function focus_under_cursor {
+  if yabai -m query --windows --space |
+    jq -er 'map(select(.focused == 1)) | length == 0' >/dev/null; then
+      yabai -m window --focus mouse 2>/dev/null || true
+  fi
+}
+# If no window on the current space is focused after a window is destroyed or
+# minimized, or an application is hidden, focus the window under the cursor.
+yabai -m signal --add event=window_destroyed \
+  action="focus_under_cursor"
+yabai -m signal --add event=window_minimized \
+  action="focus_under_cursor"
+yabai -m signal --add event=application_hidden \
+  action="focus_under_cursor"
+

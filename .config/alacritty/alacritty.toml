@@ -32,7 +32,7 @@ import = [
 
 [font]
 size = 14
-normal = { family = "JetBrains Mono", style = "ExtraLight" }
+normal = { family = "JetBrainsMono Nerd Font", style = "ExtraLight" }
 bold = { style = "Light" }
 
 [window]
@@ -41,3 +41,8 @@ dimensions = { columns = 159, lines = 73 }
 padding = { x = 2 , y = 2 }
 position = { x = 1283, y = 0 }
 decorations = "None"
+
+# [keyboard]
+# bindings = [
+# { key = "M", mods = "Alt|Shift", action = "ToggleSimpleFullscreen" },
+# ]
