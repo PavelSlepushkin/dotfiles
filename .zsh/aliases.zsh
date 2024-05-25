@@ -21,9 +21,10 @@ export LS_OPTIONS='--color=auto --classify --escape --human-readable --no-group'
 alias ls="ls $LS_OPTIONS"
 alias ll="ls -ltr"
 alias la="ls -la"
+alias open=xdg-open
 ## trying some modern replacements
-alias cat=batcat
-alias catp=batcat --plain
+alias cat=bat
+alias catp=bat --plain
 export BAT_THEME=Nord
 alias diff=delta
 compdef delta=diff

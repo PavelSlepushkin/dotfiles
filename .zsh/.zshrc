@@ -47,11 +47,14 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "romkatv/powerlevel10k"
 
 #fzf
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /etc/zsh_command_not_found
+eval "$(fzf --zsh)"
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 #Completions
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
+#
+#starship
+# eval "$(starship init zsh)"
