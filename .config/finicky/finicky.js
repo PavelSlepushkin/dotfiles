@@ -13,7 +13,8 @@ const chromeCloud = {
 module.exports = {
   //legacy :)
   //need to switch to chrome back
-  defaultBrowser: "Firefox",
+  //defaultBrowser: "Firefox",
+  defaultBrowser: "Google Chrome",
   // rewrite: [
   //   {
   //     // Redirect all urls to use https
@@ -28,7 +29,7 @@ module.exports = {
       browser: "Safari"
     },
     {
-      // Open TFE in Brave - cloud accounts
+      // Open TFE in cloud accounts
       // argo also should go via cloud account at the moment
       // https://tfe.devops.kyriba.com
       match: finicky.matchHostnames(["tfe.devops.kyriba.com", "argocd.core.aws.kyriba.com"]),
