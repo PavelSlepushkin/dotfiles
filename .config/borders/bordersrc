@@ -6,7 +6,12 @@ options=(
 	hidpi=off
 	# active_color=0xffa7c080
 	# active_color=0xffe2e2e3
-	active_color=0xffff7600
+	# orange
+	# active_color=0xffff7600
+	# sapphire
+	# active_color=0xff0f52ba 
+	# pastel orange
+	active_color=0xfffeba4f
 	inactive_color=0xff414550
 )
 

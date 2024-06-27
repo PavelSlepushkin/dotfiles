@@ -1,0 +1,35 @@
+#!/bin/bash
+maxed_file=~/.config/borders/maxed
+if $(yabai -m query --windows --window |jq '."has-fullscreen-zoom"'); then 
+	maxed=true;
+	options=(
+	  style=round
+	  width=6.0
+	  hidpi=off
+	  active_color=0xffff0000
+	  inactive_color=0xff414550
+	)
+else
+	maxed=false;
+	options=(
+	  style=round
+	  width=6.0
+	  hidpi=off
+	  active_color=0xffff7600
+	  inactive_color=0xff414550
+	)
+fi
+
+		# borders "${options[@]}"
+if [ -e $maxed_file ]; then
+	if [ "${maxed}" != true ]; then
+		borders "${options[@]}"
+		rm $maxed_file
+	fi
+else 
+	if [ "${maxed}" = true ]; then
+		borders "${options[@]}"
+		touch $maxed_file
+	fi
+fi
+

@@ -30,32 +30,26 @@ yabai -m rule --add app="^Calculator$" manage=off
 # yabai -m signal --add event=window_focused \
 #      action=~/.config/borders/diffborders
 
-# function change_border_color {
-#   windowId=$(yabai -m query --windows --window |jq '.id')
-#   # echo "$(date) - ${YABAI_WINDOW_ID}" >> ~/tmp/yabai_fcalls.log
-#   sleep 1 # sleep as yabai does not update state fast enough
-#   if $(yabai -m query --windows --window | jq '."has-fullscreen-zoom"'); then
-#     borders active_color=0xffff0000 apply-to=${windowId}
-#   else
-#     borders active_color=0xffff7600 apply-to=${windowId}
-#   fi
-# }
-#
-# yabai -m signal --add event=window_resized \
-#   action=change_border_color
-
-function focus_under_cursor {
-  if yabai -m query --windows --space |
-    jq -er 'map(select(.focused == 1)) | length == 0' >/dev/null; then
-      yabai -m window --focus mouse 2>/dev/null || true
+function toggle_border_color_window() {
+# gets window ID, set different borders for fullscreen/parent-zoom/default
+  windowID=$1
+  sleep 0.1
+  if $(yabai -m query --windows --window |jq '."has-fullscreen-zoom"'); then
+    borders active_color=0xffff0000 apply-to=${windowID}
+  elif $(yabai -m query --windows --window |jq '."has-parent-zoom"'); then
+    borders active_color=0xffab47bc apply-to=${windowID}
+  else
+    borders active_color=0xffff7600 apply-to=${windowID}
   fi
 }
-# If no window on the current space is focused after a window is destroyed or
-# minimized, or an application is hidden, focus the window under the cursor.
+
+yabai -m signal --add event=window_resized \
+   action="~/.config/yabai/toggleborders.sh \$YABAI_WINDOW_ID"
+
 yabai -m signal --add event=window_destroyed \
-  action="focus_under_cursor"
+  action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 yabai -m signal --add event=window_minimized \
-  action="focus_under_cursor"
+  action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 yabai -m signal --add event=application_hidden \
-  action="focus_under_cursor"
+  action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 
