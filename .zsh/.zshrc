@@ -36,6 +36,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 _comp_options+=(globdots)
+# PATH
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin/:$PATH
 # source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/vim-mode.zsh
 source $ZDOTDIR/aliases.zsh
@@ -48,7 +50,7 @@ zsh_add_plugin "romkatv/powerlevel10k"
 
 #fzf
 eval "$(fzf --zsh)"
-source /usr/share/doc/pkgfile/command-not-found.zsh
+# source /usr/share/doc/pkgfile/command-not-found.zsh
 
 #Completions
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
@@ -56,5 +58,3 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
 #
-#starship
-# eval "$(starship init zsh)"

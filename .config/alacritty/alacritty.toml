@@ -3,7 +3,8 @@ import = [
 ]
 
 [font]
-normal = { family = "JetBrains Mono", style = "Light"}
+# normal = { family = "JetBrains Mono", style = "Light"}
+normal = { family = "JetBrainsMono Nerd Font", style = "Light"}
 bold = { style = "Regular" }
 size = 11
 
