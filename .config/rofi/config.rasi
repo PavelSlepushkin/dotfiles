@@ -1,4 +1,4 @@
 configuration {
-      modes: "window,drun,run,power-menu:rofi-power-menu --confirm=''";
+      modes: "window,drun,run,power-menu:~/.local/bin/rofi-power-menu --confirm=''";
 }
 @theme "/usr/share/rofi/themes/Arc-Dark.rasi"

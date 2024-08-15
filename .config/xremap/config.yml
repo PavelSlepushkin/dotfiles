@@ -1,0 +1,28 @@
+keypress_delay_ms: 10
+
+# `modmap` section
+# For key-to-key remapping (no combinations). Remapping a key to a modifier key (e.g. CapsLock to Control_L) is supported only in `modmap` section
+# modmap:
+#   - name: Make ⌘ act as Ctrl
+# #    application:
+# #      not: gnome-terminal-server
+#     remap:
+#       LeftCtrl: LeftMeta
+#       LeftMeta: LeftCtrl
+#       RightCtrl: RightMeta
+#       RightMeta: RightCtrl
+# `keymap` section
+# For remapping a sequence of key combinations to another sequence of key combinations
+#copy-paste is enough I guess
+keymap:
+  - name: CopyPasteAlacritty
+    application: 
+      only: Alacritty
+    remap:
+      Super-V: Shift-INSERT
+  - name: CopyPasteFind
+    remap:
+      Super-C: Ctrl-C
+      Super-V: Ctrl-V
+      Super-F: Ctrl-F
+  #
