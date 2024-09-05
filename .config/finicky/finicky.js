@@ -1,7 +1,9 @@
 // ~/.finicky.js
+// profile name is a directory in 
+// ls ~/Library/Application\ Support/Google/Chrome/
 const chromeOkta = {
   name: "Google Chrome",
-  profile: "System Profile",
+  profile: "Default",
 };
 
 const chromeCloud = {
@@ -9,12 +11,17 @@ const chromeCloud = {
   profile: "Profile 1",
 };
 
+const chromePersonal = {
+  name: "Google Chrome",
+  profile: "Profile 2",
+};
 
 module.exports = {
   //legacy :)
   //need to switch to chrome back
   //defaultBrowser: "Firefox",
-  defaultBrowser: "Google Chrome",
+  //defaultBrowser: "Google Chrome",
+  defaultBrowser: chromeOkta,
   // rewrite: [
   //   {
   //     // Redirect all urls to use https
@@ -28,13 +35,16 @@ module.exports = {
       match: finicky.matchHostnames(["apple.com", "example.com"]),
       browser: "Safari"
     },
-    {
-      // Open TFE in cloud accounts
-      // argo also should go via cloud account at the moment
-      // https://tfe.devops.kyriba.com
-      match: finicky.matchHostnames(["tfe.devops.kyriba.com", "argocd.core.aws.kyriba.com"]),
-      browser: chromeCloud,
-    },
+    // browser staff moved to regular OKTA account
+    // {
+    //   // Open TFE in cloud accounts
+    //   // argo also should go via cloud account at the moment
+    //   // https://tfe.devops.kyriba.com
+    //   // match: finicky.matchHostnames(["tfe.devops.kyriba.com", "argocd.core.aws.kyriba.com"]),
+    //   match: finicky.matchHostnames(["tfe.devops.kyriba.com",]),
+    //   //browser: "Google Chrome",
+    //   browser: chromeCloud,
+    // },
     {
       // Open any url that includes the string "workplace" in Firefox
       match: /workplace/,
@@ -43,6 +53,7 @@ module.exports = {
     {
       // Argo prod now works in Chrome - but not with admin creds
       match: finicky.matchHostnames(["ro-argocd.core.aws.kyriba.com", "gitlab.com", "argocd.dev.kod.kyriba.com","localhost"]),
+      //browser: "Google Chrome",
       browser: chromeOkta,
     },
     {

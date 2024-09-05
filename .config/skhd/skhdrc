@@ -8,8 +8,8 @@ default < cmd + shift - m : osascript ~/applescripts/chrome_meet_bring_to_front.
 default < f5 : osascript ~/applescripts/chrome_meet_bring_to_front.script  
 # copy to clipboard
 default < cmd - p : zsh -c "cat /Users/pavel.slepushkin/notes/one-timepwd|pbcopy ; sleep 30 ; echo ''|pbcopy"
-# default < cmd + ctrl - p : zsh -c "cat /Users/pavel.slepushkin/notes/one-timepwd|pbcopy"
-# default < ctrl + shift - p : zsh -c "cat /Users/pavel.slepushkin/notes/one-timepwd|pbcopy"
+# open what we have in clipboard(mostly for urls)
+cmd - o : u=$(pbpaste); open $u
 
 # shortcuts for yabai
 # DO NOT USE CMD/Super key for yabai shortcuts

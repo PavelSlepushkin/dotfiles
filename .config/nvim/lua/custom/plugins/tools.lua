@@ -53,4 +53,11 @@ return {
       vim.fn['mkdp#util#install']()
     end,
   },
+  {
+    -- comments for terraform
+    'folke/ts-comments.nvim',
+    opts = {},
+    event = 'VeryLazy',
+    enabled = vim.fn.has 'nvim-0.10.0' == 1,
+  },
 }

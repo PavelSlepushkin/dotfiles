@@ -38,11 +38,13 @@ _comp_options+=(globdots)
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # PATH
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 # source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/vim-mode.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/functions.zsh
+# additional work-specific 
+[[ -f $ZDOTDIR/functions_add.zsh ]] && source $ZDOTDIR/functions_add.zsh
 # vault 
 export VAULT_ADDR=https://vault.core.aws.kyriba.com 
 #Plugins
@@ -51,7 +53,8 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "romkatv/powerlevel10k"
 
 #fzf
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
+# eval "$(fzf --zsh)"
 # [ -f $ZDOTDIR/.fzf.zsh ] && source $ZDOTDIR/.fzf.zsh
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /etc/zsh_command_not_found
