@@ -27,7 +27,7 @@
         // "temperature",
         // "backlight",
         // "keyboard-state",
-        // "hyprland/language",
+         "hyprland/language",
         // "battery",
         // "battery#bat2",
         // "custom/bluetooth",
@@ -103,6 +103,10 @@
     //     "tooltip": "false"
     //     // "restart-interval": 10,
     // },
+    "hyprland/language": {
+        "format-pl": "pl",
+        "format-ru": "ru"
+    },
     "bluetooth": {
         // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
         "format": " {status}",
