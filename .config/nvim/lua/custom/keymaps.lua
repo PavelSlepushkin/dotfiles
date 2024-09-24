@@ -34,7 +34,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- greatest remap ever
-vim.keymap.set('x', '<leader>p', '"_dP')
+-- vim.keymap.set('x', '<leader>p', '"_dP')
 -- disable clipboard integration
 vim.opt.clipboard = ''
 -- yank into system clipboard
@@ -67,34 +67,36 @@ end, { desc = '[T]oggle relative line numbers' })
 --
 --Setup for Notes, assumes folder ~/notes/ exists
 --
-local Notes = {}
--- create functions for keymaps
-Notes.Path = os.getenv 'HOME' .. '/notes/'
-Notes.Log = function()
-  vim.cmd('e ' .. Notes.Path .. 'log.txt')
-end
-Notes.Scratch = function()
-  vim.cmd('e ' .. Notes.Path .. 'scratch.txt')
-end
-Notes.Daily = function()
-  vim.cmd('e ' .. Notes.Path .. os.date '%Y-%m-%d' .. '.md')
-end
-Notes.Find_Files = function()
-  require('telescope.builtin').find_files {
-    prompt_title = '<notes::files>',
-    cwd = Notes.Path,
-  }
-end
-Notes.Live_Grep = function()
-  require('telescope.builtin').live_grep {
-    prompt_title = '<notes::grep>',
-    cwd = Notes.Path,
-  }
-end
--- settings keymaps
-vim.keymap.set('n', '<leader>nl', Notes.Log, { desc = '[N]otes [L]og' })
-vim.keymap.set('n', '<leader>ns', Notes.Scratch, { desc = '[N]otes [S]cratch' })
-vim.keymap.set('n', '<leader>nd', Notes.Daily, { desc = '[N]otes [D]aily in markdown' })
-vim.keymap.set('n', '<leader>nf', Notes.Find_Files, { desc = '[N]otes [F]iles' })
-vim.keymap.set('n', '<leader>ng', Notes.Live_Grep, { desc = '[N]otes [G]rep' })
+--replace it with zellycasten - telescope
+--
+-- local Notes = {}
+-- -- create functions for keymaps
+-- Notes.Path = os.getenv 'HOME' .. '/notes/'
+-- Notes.Log = function()
+--   vim.cmd('e ' .. Notes.Path .. 'log.txt')
+-- end
+-- Notes.Scratch = function()
+--   vim.cmd('e ' .. Notes.Path .. 'scratch.txt')
+-- end
+-- Notes.Daily = function()
+--   vim.cmd('e ' .. Notes.Path .. os.date '%Y-%m-%d' .. '.md')
+-- end
+-- Notes.Find_Files = function()
+--   require('telescope.builtin').find_files {
+--     prompt_title = '<notes::files>',
+--     cwd = Notes.Path,
+--   }
+-- end
+-- -- Notes.Live_Grep = function()
+--   require('telescope.builtin').live_grep {
+--     prompt_title = '<notes::grep>',
+--     cwd = Notes.Path,
+--   }
+-- end
+-- -- settings keymaps
+-- -- vim.keymap.set('n', '<leader>nl', Notes.Log, { desc = '[N]otes [L]og' })
+-- -- vim.keymap.set('n', '<leader>ns', Notes.Scratch, { desc = '[N]otes [S]cratch' })
+-- -- vim.keymap.set('n', '<leader>nd', Notes.Daily, { desc = '[N]otes [D]aily in markdown' })
+-- vim.keymap.set('n', '<leader>nf', Notes.Find_Files, { desc = '[N]otes [F]iles' })
+-- vim.keymap.set('n', '<leader>ng', Notes.Live_Grep, { desc = '[N]otes [G]rep' })
 -- end of notes setup

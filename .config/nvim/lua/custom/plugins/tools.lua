@@ -8,15 +8,15 @@ return {
     end,
   },
 
-  -- {
-  --   "kylechui/nvim-surround", --surround -add keymaps like 'ys(' - you surround, 'cs]' - change surround to ]
-  --   version = "*",            -- Use for stability; omit to use `main` branch for the latest features
-  --   config = function()
-  --     require("nvim-surround").setup({
-  --       -- Configuration here, or leave empty to use defaults
-  --     })
-  --   end
-  -- },
+  {
+    "kylechui/nvim-surround", --surround -add keymaps like 'ys(' - you surround, 'cs]' - change surround to ]
+    version = "*",            -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
 
   -- {
   --   'windwp/nvim-autopairs', --autopairs (used to them in VS code)
