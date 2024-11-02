@@ -7,7 +7,6 @@ return {
       require('mini.cursorword').setup()
     end,
   },
-
   -- {
   --   "kylechui/nvim-surround", --surround -add keymaps like 'ys(' - you surround, 'cs]' - change surround to ]
   --   version = "*",            -- Use for stability; omit to use `main` branch for the latest features
@@ -24,7 +23,6 @@ return {
   --     require('nvim-autopairs').setup()
   --   end
   -- },
-
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- 'tpope/vim-unimpaired', -- handy mappins for [ and ]
   -- {
@@ -52,5 +50,12 @@ return {
     build = function()
       vim.fn['mkdp#util#install']()
     end,
+  },
+  {
+    -- comments for terraform
+    'folke/ts-comments.nvim',
+    opts = {},
+    event = 'VeryLazy',
+    enabled = vim.fn.has 'nvim-0.10.0' == 1,
   },
 }
