@@ -38,7 +38,8 @@ _comp_options+=(globdots)
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # PATH
-export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
+export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
+
 # source $ZDOTDIR/prompt.zsh
 source $ZDOTDIR/vim-mode.zsh
 source $ZDOTDIR/aliases.zsh
@@ -61,6 +62,7 @@ source <(fzf --zsh)
 
 #Completions
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+eval "$(task --completion zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh

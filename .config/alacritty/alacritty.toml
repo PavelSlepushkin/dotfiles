@@ -42,6 +42,8 @@ padding = { x = 2 , y = 2 }
 position = { x = 1283, y = 0 }
 decorations = "None"
 
+[terminal]
+osc52 = "CopyPaste"
 # [keyboard]
 # bindings = [
 # { key = "M", mods = "Alt|Shift", action = "ToggleSimpleFullscreen" },
