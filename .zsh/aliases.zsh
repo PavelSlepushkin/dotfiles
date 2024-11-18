@@ -35,3 +35,5 @@ alias caty='bat -l yaml'
 export BAT_THEME=Nord
 alias diff=delta
 compdef delta=diff
+## for tmus-ssh
+alias ssh='TERM=xterm-256color ssh'
