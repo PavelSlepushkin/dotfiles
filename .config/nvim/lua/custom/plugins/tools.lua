@@ -9,13 +9,13 @@ return {
   },
 
   {
-    "kylechui/nvim-surround", --surround -add keymaps like 'ys(' - you surround, 'cs]' - change surround to ]
-    version = "*",            -- Use for stability; omit to use `main` branch for the latest features
+    'kylechui/nvim-surround', --surround -add keymaps like 'ys(' - you surround, 'cs]' - change surround to ]
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-      require("nvim-surround").setup({
+      require('nvim-surround').setup {
         -- Configuration here, or leave empty to use defaults
-      })
-    end
+      }
+    end,
   },
 
   -- {
@@ -50,6 +50,7 @@ return {
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
     build = function()
+      vim.cmd [[Lazy load markdown-preview.nvim]]
       vim.fn['mkdp#util#install']()
     end,
   },
@@ -60,4 +61,5 @@ return {
     event = 'VeryLazy',
     enabled = vim.fn.has 'nvim-0.10.0' == 1,
   },
+  'github/copilot.vim',
 }

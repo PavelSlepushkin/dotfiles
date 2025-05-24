@@ -14,6 +14,7 @@ SAVEHIST=100000
 # setopt autocd extendedglob nomatch menucomplete
 # setopt interactive_comments
 stty stop undef		# Disable ctrl-s to freeze terminal.
+stty -ixon
 zle_highlight=('paste:none')
 
 # beeping is annoying
